@@ -1,2 +1,6 @@
+Ansible Architecture:
+---------------------
+
 Ansible installation:
+---------------------
 
