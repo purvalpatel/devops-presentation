@@ -4,4 +4,9 @@ Ansible Architecture:
 
 Ansible installation:
 ---------------------
+```bash
+apt-get update
+apt-get install ansible
+```
+
 
