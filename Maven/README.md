@@ -15,5 +15,14 @@ Sample java app:
 ---------------
 [Sample Code](https://github.com/jenkins-docs/simple-java-maven-app.git)
 
+Compile:    `mvn compile`
+
+Run unit test:  `mvn test`
+
+Make package(war,jar) : `mvn package`
+
+Clean the old compilation: `mvn clean`
+
+Fresh installation: `mvn clean install`
 
 
