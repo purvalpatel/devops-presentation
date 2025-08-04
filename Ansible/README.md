@@ -345,3 +345,22 @@ loop.yaml
       - unzip
 
 ```
+#### conditions
+Run tasks only when specific conditions are true.
+
+condition.yaml
+
+```yaml
+- name: Nginx
+  hosts: all
+  become: true      ## Run as sudo/root
+
+
+  tasks:
+  - name: Install NGINX on Ubuntu
+    apt:
+      name: nginx
+      state: present
+    when: ansible_distribution == "Ubuntu"
+```
+
