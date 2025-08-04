@@ -47,21 +47,21 @@ Basics of Yaml:
 --------------
 YAML - Human readable language mostly used for writing configuration files.
 
-Key-Value pairs:
+#### Key-Value pairs:
 ```yaml
 vars:
   username: dev_user
   server: 127.0.0.1
 ```
 
-Lists:
+#### Lists:
 ```yaml
 packages:
   - nginx
   - git
   - curl
 ```
-Dictionaries (Nested Key-value):
+#### Dictionaries (Nested Key-value):
 ```yaml
 vars:
   user_info:
@@ -71,7 +71,7 @@ vars:
 
 Creating Playbook:
 ------------------
-Ansible playbook Syntax:
+#### playbook Syntax:
 ```
 - name: My first play
   hosts: myhosts
@@ -84,7 +84,8 @@ Ansible playbook Syntax:
        msg: Hello world
 ```
 
-Task 1: Install packages:
+### Task 1: Install packages:
+
 install_package.yaml
 ```yaml
 - name: install nginx on servers
@@ -105,7 +106,7 @@ ansible-playbook install_package.yaml -i /etc/ansible/hosts
 It failed!!! Due to connection with the host.
 10.10.20.104               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0
 
-Task 2: Create directory
+#### Task 2: Create directory
 
 create_directory.yaml
 ```yaml
