@@ -64,10 +64,10 @@ Playbook Examples:
 Task 1: Install packages:
 install_package.yaml
 ```yaml
-- **name**: install nginx on servers
-  **hosts**: all
+- name: install nginx on servers
+  hosts: all
 
-  **tasks**:
+  tasks:
   - name: Install nginx
     apt:
       name: nginx
@@ -87,14 +87,14 @@ Task 2: Create directory
 create_directory.yaml
 ```yaml
 ---
-- **name**: Create directory on remote hosts
-  **hosts**: all
+- name: Create directory on remote hosts
+  hosts: all
   become: true  
 
-  **vars**:
+  vars:
     dir_path: /tmp/myfolder
 
-  **tasks**:
+  tasks:
     - name: Ensure directory exists
       file:
         path: "{{ dir_path }}"
@@ -112,14 +112,14 @@ Task 3:
 Dynamic-value.yaml
 ```yaml
 ---
-- **name**: Create directory on remote hosts
-  **hosts**: all
+- name: Create directory on remote hosts
+  hosts: all
   become: true  
 
-  **vars**:
+  vars:
     dir_path: /tmp/{{VAR}}
 
-  **tasks**:
+  tasks:
     - name: Ensure directory exists
       file:
         path: "{{ dir_path }}"
