@@ -1,6 +1,6 @@
 Installation:
 --------------
-[link](https://www.jenkins.io/doc/book/installing/)
+[Official document link](https://www.jenkins.io/doc/book/installing/)
 
 OR below are the installation steps for ubuntu:
 
