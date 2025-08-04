@@ -14,36 +14,6 @@ verify installation:
 
 `ansible --version`
 
-
-Basics of Yaml:
---------------
-YAML - Human readable language mostly used for writing configuration files.
-
-Key-Value pairs:
-```yaml
-vars:
-  username: dev_user
-  server: 127.0.0.1
-```
-
-Lists:
-```yaml
-packages:
-  - nginx
-  - git
-  - curl
-```
-Dictionaries (Nested Key-value):
-```yaml
-vars:
-  user_info:
-    name: devuser
-    shell: /bin/bash
-```
-
-How to set public key authentication ?
-
-
 Setup inventory:
 ----------------
 
@@ -71,9 +41,49 @@ Ping group in your inventory:
 ansible web -m ping -i /etc/ansible/inventory/hosts
 ```
 
+How to set public key authentication ?
 
-Playbook Examples:
+Basics of Yaml:
+--------------
+YAML - Human readable language mostly used for writing configuration files.
+
+Key-Value pairs:
+```yaml
+vars:
+  username: dev_user
+  server: 127.0.0.1
+```
+
+Lists:
+```yaml
+packages:
+  - nginx
+  - git
+  - curl
+```
+Dictionaries (Nested Key-value):
+```yaml
+vars:
+  user_info:
+    name: devuser
+    shell: /bin/bash
+```
+
+Creating Playbook:
 ------------------
+Ansible playbook Syntax:
+```
+- name: My first play
+  hosts: myhosts
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Hello world
+```
+
 Task 1: Install packages:
 install_package.yaml
 ```yaml
