@@ -130,7 +130,7 @@ ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts
 Managing Tasks using Tags and Variables:
 --------------
 
-Tags:
+#### Tags:
 
 task_tag.yaml
 ```yaml
@@ -152,9 +152,9 @@ How to use:
 ```
 ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts --tags start
 ```
-Variables:
+#### Variables:
 
-1. Static:
+##### 1. Static:
 create_directory.yaml
 ```yaml
 ---
@@ -177,7 +177,7 @@ Run playbook for apply changes:
 ```
 ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts
 ```
-2. Parameterized:
+##### 2. Parameterized:
 Dynamic-value.yaml
 ```yaml
 ---
