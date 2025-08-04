@@ -114,8 +114,56 @@ create_directory.yaml
   hosts: all
   become: true      ## Run as sudo/root
 
+  tasks:
+    - name: Ensure directory exists
+      file:
+        path: "/tmp/mydir"
+        state: directory
+        mode: '0755'
+```
+Run playbook for apply changes:
+
+```
+ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts
+```
+
+Managing Tasks using Tags and Variables:
+--------------
+
+Tags:
+
+task_tag.yaml
+```yaml
+tasks:
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: present
+    tags: install
+
+  - name: Start nginx
+    service:
+      name: nginx
+      state: started
+    tags: start
+```
+
+How to use:
+```
+ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts --tags start
+```
+Variables:
+
+1. Static:
+create_directory.yaml
+```yaml
+---
+- name: Create directory on remote hosts
+  hosts: all
+  become: true      ## Run as sudo/root
+
   vars:
-    dir_path: /tmp/myfolder
+    dir_path: 
 
   tasks:
     - name: Ensure directory exists
@@ -129,9 +177,7 @@ Run playbook for apply changes:
 ```
 ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts
 ```
-
-
-Task 3:
+2. Parameterized:
 Dynamic-value.yaml
 ```yaml
 ---
@@ -153,25 +199,4 @@ Run playbook
 ```
 ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts --extra-vars "VAR=hello"
 ```
-Managing Tasks using Tags and Variables:
---------------
-task_tag.yaml
-```yaml
-tasks:
-  - name: Install nginx
-    apt:
-      name: nginx
-      state: present
-    tags: install
 
-  - name: Start nginx
-    service:
-      name: nginx
-      state: started
-    tags: start
-```
-
-How to use:
-```
-ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts --tags start
-```
