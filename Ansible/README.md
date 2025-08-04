@@ -131,6 +131,7 @@ Managing Tasks using Tags and Variables:
 --------------
 
 #### Tags:
+Use: Run specific task.
 
 task_tag.yaml
 ```yaml
