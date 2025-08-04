@@ -199,4 +199,95 @@ Run playbook
 ```
 ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts --extra-vars "VAR=hello"
 ```
+Breaking Playbook into Roles:
+------------------------------
+What is Roles ?
+- Way to Organize and re-use the automation code.
+- Like, Breaking tasks into smaller parts.
 
+How to create:
+```
+ansible-galaxy init nginx-role
+```
+
+Directory structure:
+```
+roles/
+site.yaml
+└── nginx-role/
+    ├── tasks/
+    │   └── main.yml       ← list of tasks to do
+    ├── files/             ← files to copy
+    ├── templates/         ← config templates
+    ├── vars/              ← default variables
+    └── handlers/          ← restart service if needed
+```
+
+Let's see it step-by-step:
+
+tasks: contains the tasks.
+roles/nginx/tasks/main.yml
+```
+- name: Install NGINX
+  apt:
+    name: nginx
+    state: present
+    update_cache: yes
+
+- name: Copy NGINX config
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  notify: restart nginx
+
+- name: Ensure NGINX is running
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+```
+Template: service configuration files. if any
+roles/nginx/templates/nginx.conf.j2
+```
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+events { worker_connections 768; }
+
+http {
+    server {
+        listen 80;
+        location / {
+            return 200 'Hello from Ansible-managed NGINX!';
+        }
+    }
+}
+
+```
+Handlers: This is use for Handeling the service.
+roles/nginx/handlers/main.yml
+```
+- name: restart nginx
+  service:
+    name: nginx
+    state: restarted
+```
+
+defaults: if any variables are there.
+roles/nginx/defaults/main.yml
+
+Main file:
+site.yaml
+
+```
+- name: Install and configure NGINX
+  hosts: web
+  become: yes
+  roles:
+    - nginx-role
+```
+
+Execute playbook:
+```
+ansible-playbook site.yaml -i /etc/ansible/inventory/hosts
+```
