@@ -2,7 +2,7 @@ Installation:
 --------------
 [link](https://www.jenkins.io/doc/book/installing/)
 
-Or 
+OR below are the installation steps for ubuntu:
 
 ```bash
 sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
