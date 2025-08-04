@@ -61,6 +61,16 @@ nano /etc/ansible/inventory/hosts.ini
 #server12 ansible_host=10.10.110.12 ansible_user=root ansible_port=2222
 ```
 
+Verify inventory:
+```
+ansible-inventory -i /etc/ansible/inventory/hosts --list
+```
+
+Ping group in your inventory:
+```
+ansible web -m ping -i /etc/ansible/inventory/hosts
+```
+
 
 Playbook Examples:
 ------------------
