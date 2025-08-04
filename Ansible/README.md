@@ -353,14 +353,65 @@ condition.yaml
 ```yaml
 - name: Nginx
   hosts: all
-  become: true      ## Run as sudo/root
-
+  become: true
 
   tasks:
-  - name: Install NGINX on Ubuntu
-    apt:
-      name: nginx
-      state: present
-    when: ansible_distribution == "Ubuntu"
+    - name: Check for config file
+      stat:
+        path: /etc/nginx/nginx.conf
+      register: config_stat
+
+    - name: Display file exists message
+      debug:
+        msg: "Config file exists!"
+      when: config_stat.stat.exists
 ```
 
+Exception handling:
+--------
+
+#### Structure:
+```yaml
+tasks:
+  - block:
+      - <main tasks>                            <- Install Nginx
+    rescue:
+      - <what to do if any block task fails>    <- install alternative or reinstall if it fails
+    always:
+      - <always run, success or failure>        <- success or failure.
+```
+
+#### Example:
+
+```yaml
+- name: Exception handling example
+  hosts: all
+  become: true
+
+  tasks:
+    - block:
+        - name: Try to install an invalid package
+          apt:
+            name: invalid-package-name
+            state: present
+
+        - name: Start nginx
+          service:
+            name: nginx
+            state: started
+
+      rescue:
+        - name: Notify about failure
+          debug:
+            msg: "Installation failed. Attempting recovery..."
+
+        - name: Install fallback package (nginx)
+          apt:
+            name: nginx
+            state: present
+
+      always:
+        - name: Cleanup or final message
+          debug:
+            msg: "This runs no matter what — success or failure."
+```
