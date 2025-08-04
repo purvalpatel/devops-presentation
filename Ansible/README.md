@@ -33,13 +33,16 @@ packages:
   - git
   - curl
 ```
-Dictionaries ( Nested Key-value):
+Dictionaries (Nested Key-value):
 ```yaml
 vars:
   user_info:
     name: devuser
     shell: /bin/bash
 ```
+
+How to set public key authentication ?
+
 
 Setup inventory:
 ----------------
@@ -89,7 +92,7 @@ create_directory.yaml
 ---
 - name: Create directory on remote hosts
   hosts: all
-  become: true  
+  become: true      ## Run as sudo/root
 
   vars:
     dir_path: /tmp/myfolder
