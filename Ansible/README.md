@@ -42,6 +42,7 @@ vars:
 ```
 
 Setup inventory:
+----------------
 
 Create directory:
 ```bash
