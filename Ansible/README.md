@@ -226,6 +226,7 @@ site.yaml
 Let's see it step-by-step:
 
 tasks: contains the tasks.
+
 roles/nginx/tasks/main.yml
 ```
 - name: Install NGINX
@@ -247,6 +248,7 @@ roles/nginx/tasks/main.yml
     enabled: yes
 ```
 Template: service configuration files. if any
+
 roles/nginx/templates/nginx.conf.j2
 ```
 user www-data;
@@ -265,6 +267,7 @@ http {
 
 ```
 Handlers: This is use for Handeling the service.
+
 roles/nginx/handlers/main.yml
 ```
 - name: restart nginx
@@ -274,9 +277,11 @@ roles/nginx/handlers/main.yml
 ```
 
 defaults: if any variables are there.
+
 roles/nginx/defaults/main.yml
 
 Main file:
+
 site.yaml
 
 ```
@@ -290,4 +295,52 @@ site.yaml
 Execute playbook:
 ```
 ansible-playbook site.yaml -i /etc/ansible/inventory/hosts
+```
+
+Control Structures:
+----------
+### Blocks, Loops, Conditions
+
+#### Blocks
+Group Multiple related tasks together.
+
+blocks.yaml
+```yaml
+- name: Nginx
+  hosts: all
+  become: true      ## Run as sudo/root
+
+  tasks:
+  - block:
+      - name: Install NGINX
+        apt:
+          name: nginx
+          state: present
+
+      - name: Start NGINX
+        service:
+          name: nginx
+          state: started
+    name: Setup web server
+```
+#### loops
+Perform multiple tasks in loop.
+
+For example installing multiple packages
+loop.yaml
+```yaml
+- name: Nginx
+  hosts: all
+  become: true      ## Run as sudo/root
+
+  tasks:
+  - name: Install multiple packages
+    apt:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - git
+      - curl
+      - unzip
+
 ```
