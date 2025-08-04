@@ -153,4 +153,25 @@ Run playbook
 ```
 ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts --extra-vars "VAR=hello"
 ```
+Managing Tasks using Tags and Variables:
+--------------
+task_tag.yaml
+```yaml
+tasks:
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: present
+    tags: install
 
+  - name: Start nginx
+    service:
+      name: nginx
+      state: started
+    tags: start
+```
+
+How to use:
+```
+ansible-playbook create_directory.yaml -i /etc/ansible/inventory/hosts --tags start
+```
