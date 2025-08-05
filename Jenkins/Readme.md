@@ -19,6 +19,13 @@ sudo apt-get update
 sudo apt-get install jenkins
 ```
 
+Restart jenkins:
+```
+/etc/init.d/jenkins restart
+
+/etc/init.d/jenkins status
+```
+
 #### Open link in browser: 
 http://server-ip:8080
 
