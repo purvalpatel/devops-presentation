@@ -29,6 +29,16 @@ Restart jenkins:
 #### Open link in browser: 
 http://server-ip:8080
 
+<img width="992" height="885" alt="image" src="https://github.com/user-attachments/assets/35b93a3b-7c90-49b7-950f-35e7414454b2" />
 
+The one time admin password is stored in,
 
+```
+cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+Let the plugins installed:
+
+```
+<img width="992" height="885" alt="image" src="https://github.com/user-attachments/assets/81c81ef7-0820-402d-8a68-6724e5f373cc" />
+```
 
