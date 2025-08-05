@@ -57,13 +57,16 @@ Task 1: Build python app manually after changes done in git repository.
 
 4.3 CICD Pipeline concepts:
 --------------------------
-Goal : Merge code changes frequently (daily) with automated testing.
 
 ### 4.3.1 Continuous Integration
+Goal : Merge code changes frequently (daily) with automated testing.
 
+    - Developers commit to shared repo (e.g., GitHub) multiple times/day.
+    - Automated builds + tests trigger on each commit.
+    - Fast feedback on failures 
 
 ### 4.3.2 Delivery and Deployment
-
+    - Deployment should done on dev, prod or test server.
 
 4.4 Pipeline Security Basics:
 ----------------------------
