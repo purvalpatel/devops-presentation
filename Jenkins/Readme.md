@@ -70,9 +70,93 @@ Goal : Merge code changes frequently (daily) with automated testing.
 
 4.4 Pipeline Security Basics:
 ----------------------------
+- Authentication & Authorization
+    - RBAC (Role-Based Access Control):
+- Secrets Management
+- Restrict script execution in Pipelines
 
+4.5 Building a CI/CD Pipeline using Jenkins:
+-------------------------------------------
 
-### 4.5 Building a CI/CD Pipeline using Jenkins:
+jenkinsfile
+```
+pipeline {
+    agent any
+
+    environment {
+        // Credentials (configure in Jenkins Credentials Manager)
+        SSH_CREDS = credentials('ssh-server-creds') // ID of SSH username/password or key
+        REMOTE_DIR = '/var/www/myapp'
+        REMOTE_HOST = 'your-server-ip-or-domain.com'
+    }
+
+    stages {
+        // Stage 1: Checkout code from Git
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/yourusername/your-repo.git'
+            }
+        }
+
+        // Stage 2: Build the application (example: Node.js)
+        stage('Build') {
+            steps {
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
+
+        // Stage 3: Package artifacts (e.g., compress build files)
+        stage('Package') {
+            steps {
+                sh 'tar -czvf app-build.tar.gz ./dist/*'  // Example for a frontend app
+            }
+        }
+
+        // Stage 4: Manual approval before deployment
+        stage('Approve Deployment') {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    input message: "Deploy to ${REMOTE_HOST}?", ok: "Confirm"
+                }
+            }
+        }
+
+        // Stage 5: Deploy via SCP + SSH
+        stage('Deploy') {
+            steps {
+                script {
+                    // Copy files using SCP
+                    sh """
+                        scp -o StrictHostKeyChecking=no \
+                            app-build.tar.gz \
+                            ${SSH_CREDS_USR}@${REMOTE_HOST}:${REMOTE_DIR}/
+                    """
+
+                    // SSH into server to extract and restart services
+                    sh """
+                        ssh -o StrictHostKeyChecking=no \
+                            ${SSH_CREDS_USR}@${REMOTE_HOST} \
+                            "cd ${REMOTE_DIR} && tar -xzvf app-build.tar.gz && systemctl restart nginx"
+                    """
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            slackSend channel: '#deployments',
+                     message: "✅ Successfully deployed ${env.JOB_NAME} to ${REMOTE_HOST}"
+        }
+        failure {
+            slackSend channel: '#alerts',
+                     message: "❌ Deployment failed: ${env.JOB_NAME} (Build ${env.BUILD_NUMBER})"
+        }
+    }
+}
+```
 
 
 
