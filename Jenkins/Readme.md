@@ -4,6 +4,11 @@ Installation:
 
 OR below are the installation steps for ubuntu:
 
+Install java:
+```
+apt-get install openjdk-21-jdk
+```
+
 ```bash
 sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
