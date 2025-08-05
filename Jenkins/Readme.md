@@ -1,4 +1,13 @@
-Installation:
+4.1 Features:
+---------
+1. Continuous Integration/Continuous Delivery (CI/CD)
+2. Extensibility - 1800+ plugins
+3. Pipeline-as-Code: Jenkinsfile
+4. Distributed builds: Scale workloads accross agents
+5. Security: Role based access control
+
+
+4.1.1 Installation:
 --------------
 [Official document link](https://www.jenkins.io/doc/book/installing/)
 
@@ -39,4 +48,29 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 Let the plugins installed:
 
 <img width="992" height="885" alt="image" src="https://github.com/user-attachments/assets/81c81ef7-0820-402d-8a68-6724e5f373cc" />
+
+4.2 Jenkins for continuous integration:
+----------------------------------
+### 4.2.1 Creating and running jobs:
+
+Task 1: Build python app manually after changes done in git repository.
+
+4.3 CICD Pipeline concepts:
+--------------------------
+Goal : Merge code changes frequently (daily) with automated testing.
+
+### 4.3.1 Continuous Integration
+
+
+### 4.3.2 Delivery and Deployment
+
+
+4.4 Pipeline Security Basics:
+----------------------------
+
+
+### 4.5 Building a CI/CD Pipeline using Jenkins:
+
+
+
 
