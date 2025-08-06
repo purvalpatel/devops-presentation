@@ -59,6 +59,7 @@ Task 1: Build python app manually after changes done in git repository.
 --------------------------
 
 ### 4.3.1 Continuous Integration
+Integration - Merging and testing
 Goal : Merge code changes frequently (daily) with automated testing.
 
 - Developers commit to shared repo (e.g., GitHub) multiple times/day.
