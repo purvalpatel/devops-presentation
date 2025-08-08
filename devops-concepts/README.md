@@ -6,11 +6,11 @@
    
 2. Basics of Linux - Setting up simple web server
     - SSH - Remote logging, Key Exchange, Key based authentication etc
-    - User management in Linux - quick guide - sudo / root
-    - Installing package using apt-get - nginx
-    - Starting or stopping services using systemctl
-    - Checking for processes using ps
-    - Checking for listening ports using netstat
+    - User management in Linux - quick guide - `sudo / root`
+    - Installing package using `apt-get` - nginx
+    - Starting or stopping services using `systemctl`
+    - Checking for processes using `ps`
+    - Checking for listening ports using `netstat`
     - Before proceeding with nginx config - File system hierarchy in Linux.
      
 3. Keeping our files versioned - Git
