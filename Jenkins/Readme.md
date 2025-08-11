@@ -54,6 +54,10 @@ Maven Integration
 
 Git server
 
+#### Maven installation in jenkins
+configure Tools --> Maven installations 
+
+
 4.2 Jenkins for continuous integration:
 ----------------------------------
 ### 4.2.1 Creating and running jobs:
