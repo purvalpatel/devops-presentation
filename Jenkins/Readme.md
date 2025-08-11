@@ -34,6 +34,15 @@ Restart jenkins:
 
 /etc/init.d/jenkins status
 ```
+#### Create swap (Optional):
+```bash
+sudo fallocate -l 8G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo cp /etc/fstab /etc/fstab.bak
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
 
 #### Open link in browser: 
 http://server-ip:8080
@@ -64,11 +73,22 @@ To keep multiple versions:
 configure Tools --> Maven installations 
 
 
+
+
+
+
+
 4.2 Jenkins for continuous integration:
 ----------------------------------
 ### 4.2.1 Creating and running jobs:
 
-Task 1: Build python app manually after changes done in git repository.
+#### Task 1: Build Java app manually after changes done in git repository.
+
+ Create First jenkins job for maven project.
+1. Create Item.
+2. 
+1. Project link - https://github.com/jenkins-docs/simple-java-maven-app.git
+2. build options - `clean install`
 
 4.3 CICD Pipeline concepts:
 --------------------------
