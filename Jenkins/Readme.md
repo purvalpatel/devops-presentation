@@ -51,6 +51,7 @@ Let the plugins installed:
 
 #### Install plugins:
 Maven Integration
+
 Git server
 
 4.2 Jenkins for continuous integration:
