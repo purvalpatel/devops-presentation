@@ -55,6 +55,12 @@ Maven Integration
 Git server
 
 #### Maven installation in jenkins
+```
+apt-get install maven
+```
+
+To keep multiple versions:
+
 configure Tools --> Maven installations 
 
 
