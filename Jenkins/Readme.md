@@ -85,10 +85,9 @@ configure Tools --> Maven installations
 #### Task 1: Build Java app manually after changes done in git repository.
 
  Create First jenkins job for maven project.
-1. Create Item.
-2. 
-1. Project link - https://github.com/jenkins-docs/simple-java-maven-app.git
-2. build options - `clean install`
+1. Create Item -> Select Maben project.
+2. Project link - https://github.com/jenkins-docs/simple-java-maven-app.git
+3. build options - `clean install`
 
 4.3 CICD Pipeline concepts:
 --------------------------
