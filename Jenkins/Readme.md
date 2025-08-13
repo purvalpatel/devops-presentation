@@ -62,10 +62,7 @@ Let the plugins installed:
 - Maven Integration
 - Github
 - pipeline
-
-
-Git server
-
+- 
 #### Maven installation in jenkins
 ```
 apt-get install maven
