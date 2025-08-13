@@ -59,7 +59,10 @@ Let the plugins installed:
 <img width="992" height="885" alt="image" src="https://github.com/user-attachments/assets/81c81ef7-0820-402d-8a68-6724e5f373cc" />
 
 #### Install plugins:
-Maven Integration
+- Maven Integration
+- Github
+- pipeline
+
 
 Git server
 
