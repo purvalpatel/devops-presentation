@@ -243,8 +243,11 @@ site.yaml
 ```
 
 Let's see it step-by-step:
+1. Install nginx
+2. Transfer default nginx configuration file.
+3. Check nginx is running or not
 
-tasks: contains the tasks.
+##### tasks: contains the tasks.
 
 roles/nginx/tasks/main.yml
 ```
@@ -266,7 +269,7 @@ roles/nginx/tasks/main.yml
     state: started
     enabled: yes
 ```
-Template: service configuration files. if any
+##### Template: service configuration files. if any
 
 roles/nginx/templates/nginx.conf.j2
 ```
@@ -285,7 +288,7 @@ http {
 }
 
 ```
-Handlers: This is use for Handeling the service.
+##### Handlers: This is use for Handeling the service.
 
 roles/nginx/handlers/main.yml
 ```
@@ -295,7 +298,7 @@ roles/nginx/handlers/main.yml
     state: restarted
 ```
 
-defaults: if any variables are there.
+##### defaults: if any variables are there.
 
 roles/nginx/defaults/main.yml
 
