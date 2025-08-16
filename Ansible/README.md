@@ -25,10 +25,19 @@ Create inventory file: `nano /etc/ansible/inventory/hosts.ini`
 
 ```yaml
 [web]
-192.168.0.12
+server1 ansible_host=192.168.0.13 ansible_user=root ansible_port=22
 
-[diff_ssh_port]
-#server12 ansible_host=10.10.110.12 ansible_user=root ansible_port=2222
+#[web_server]
+#server1 ansible_host=192.168.0.13 ansible_user=root ansible_port=22
+#server2 ansible_host=192.168.0.14 ansible_user=root ansible_port=22
+
+#[db_server]
+#db ansible_host=192.168.0.15 ansible_user=root ansible_port=22
+
+# Nested groups
+[production:children]
+web_server
+db_server
 ```
 
 Verify inventory:
