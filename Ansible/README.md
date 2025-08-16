@@ -9,6 +9,7 @@ For ubuntu:
 ```bash
 apt-get update
 apt-get install ansible-core ansible
+apt install python3-pip
 ```
 verify installation:
 
