@@ -62,18 +62,14 @@ Let the plugins installed:
 - Maven Integration
 - Github
 - pipeline
-- 
+
 #### Maven installation in jenkins
 ```
 apt-get install maven
 ```
-
-To keep multiple versions:
+Configure maven version from jenkins:
 
 configure Tools --> Maven installations 
-
-
-
 
 
 
@@ -85,9 +81,11 @@ configure Tools --> Maven installations
 #### Task 1: Build Java app manually after changes done in git repository.
 
  Create First jenkins job for maven project.
-1. Create Item -> Select Maben project.
+1. Create Item -> Select Maven project.
 2. Project link - https://github.com/jenkins-docs/simple-java-maven-app.git
-3. build options - `clean install`
+3. Select Maven version
+     - Provide pom.xml path
+     - build options - `clean install` or `clean install -DSkipTests`
 
 4.3 CICD Pipeline concepts:
 --------------------------
