@@ -8,7 +8,7 @@ For ubuntu:
 
 ```bash
 apt-get update
-apt-get install ansible-core
+apt-get install ansible-core ansible
 ```
 verify installation:
 
