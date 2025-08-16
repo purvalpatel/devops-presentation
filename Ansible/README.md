@@ -42,7 +42,7 @@ server1 ansible_host=192.168.0.13 ansible_user=root ansible_port=22
 #[db_server]
 #db ansible_host=192.168.0.15 ansible_user=root ansible_port=22
 
-# Nested groups
+# Nested groups for multiple hosts
 [production:children]
 web_server
 db_server
@@ -58,7 +58,7 @@ Ping group in your inventory:
 ansible web -m ping -i /etc/ansible/inventory/hosts
 ```
 
-How to set public key authentication ?
+Q: How to set public key authentication ?
 
 Basics of Yaml:
 --------------
