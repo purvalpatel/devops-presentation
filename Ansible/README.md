@@ -11,13 +11,20 @@ apt-get update
 apt-get install ansible-core ansible
 apt install python3-pip
 ```
-verify installation:
+Keep stable python3 version(Optional):
+```
+sudo apt update
+sudo apt install software-properties-common -y
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt update
+sudo apt install python3.10 python3.10-venv python3.10-distutils -y
+```
 
+verify installation:
 `ansible --version`
 
 Setup inventory:
 ----------------
-
 Create directory:
 ```bash
 mkdir -p /etc/ansible/inventory
