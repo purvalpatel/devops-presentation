@@ -79,11 +79,18 @@ packages:
   - curl
 ```
 #### Dictionaries (Nested Key-value):
+If same variables we wanted to use then use like this.
 ```yaml
 vars:
   user_info:
     name: devuser
     shell: /bin/bash
+
+  tasks:
+    - name: Ensure user exists
+      ansible.builtin.user:
+        name: "{{ user_info.name }}"
+        shell: "{{ user_info.shell }}"
 ```
 
 Creating Playbook:
