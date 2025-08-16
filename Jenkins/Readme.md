@@ -85,7 +85,7 @@ configure Tools --> Maven installations
 2. Project link - https://github.com/jenkins-docs/simple-java-maven-app.git
 3. Select Maven version
      - Provide pom.xml path
-     - build options - `clean install` or `clean install -DSkipTests`
+     - build options - `clean install` or `clean install -Dmaven.test.skip=true`
 
 4.3 CICD Pipeline concepts:
 --------------------------
