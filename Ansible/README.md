@@ -302,9 +302,7 @@ roles/nginx/handlers/main.yml
 
 roles/nginx/defaults/main.yml
 
-Main file:
-
-site.yaml
+##### Main file: site.yaml
 
 ```
 - name: Install and configure NGINX
