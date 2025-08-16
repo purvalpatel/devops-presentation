@@ -21,7 +21,7 @@ Create directory:
 ```bash
 mkdir -p /etc/ansible/inventory
 ```
-Create inventory file: `nano /etc/ansible/inventory/hosts.ini`
+Create inventory file: `nano /etc/ansible/inventory/hosts`
 
 ```yaml
 [web]
