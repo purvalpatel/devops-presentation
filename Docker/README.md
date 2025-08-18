@@ -22,9 +22,9 @@ docker stop <id>        ## stop container.
 ```
 Git + Jenkins + Docker + Ansible:
 ---------------------------------
-### Task : Deploy application on nginx webserver with docker.
+#### Task : Deploy application on nginx webserver with docker.
 
-#### Devops plan:
+### Devops plan:
 1. Merge code in Github.
 2. Jenkins take a pull from github.
 3. Creates docker image and push on docker hub.
