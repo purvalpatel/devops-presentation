@@ -44,14 +44,14 @@ Git + Jenkins + Docker + Ansible:
    
 4. Setup Dockerhub account.
 5. Store Dockerhub credentials into jenkins.
-1. Go to **Manage Jenkins** → **Credentials**.
-2. Select **Global** → **Add Credentials**.
-3. Choose **Kind** → **Username with password**.
-4. Fill in the details:
-   - **Username**: `DOCKERHUB_PASS`
-   - **Password**: `xxxxx`
-   - **ID**: `dockerhub-pass`
-5. Click **OK** to save.
+    1. Go to **Manage Jenkins** → **Credentials**.
+    2. Select **Global** → **Add Credentials**.
+    3. Choose **Kind** → **Username with password**.
+    4. Fill in the details:
+       - **Username**: `DOCKERHUB_PASS`
+       - **Password**: `xxxxx`
+       - **ID**: `dockerhub-pass`
+    5. Click **OK** to save.
 
 6. Verify the ansible inventory.
    
