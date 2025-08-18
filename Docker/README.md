@@ -33,7 +33,7 @@ Git + Jenkins + Docker + Ansible:
 
 #### Prerequisites:
 1. Create Git project with ( Application code, Dockerfile, Jenkinsfile, playbook )
-    (Git project)[https://github.com/purvalpatel/Sample_Nginx_Project_autodevops]
+    [Git project](https://github.com/purvalpatel/Sample_Nginx_Project_autodevops)
    
 2. Jenkins account with all packages installed.
    If no, install below dependencies:
