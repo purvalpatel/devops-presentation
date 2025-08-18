@@ -22,7 +22,16 @@ docker stop <id>        ## stop container.
 ```
 Git + Jenkins + Docker + Ansible:
 ---------------------------------
+##### Deploy one application 
 
+##### Prerequisites:
+1. Create Dockerhub account.
+2. Add Docker hub credentails to jenkins:
+    a. Manage jenkins -> Credentials -> Global -> Add credentials
+       Username with password
+       username : dockerhub-creds (purval1992)
+       username: DOCKERHUB_PASS
+   
 ##### Deppendencies:
 1. Below packages need to install on jenkins server.
 ```
