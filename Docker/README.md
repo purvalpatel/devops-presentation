@@ -56,15 +56,38 @@ Git + Jenkins + Docker + Ansible:
 6. Verify the ansible inventory.
    
 #### Jenkins job Setup:
-1. Login jenkins
-2. Create Job
-   New Item -> Pipeline
-3. check Discard old builds
-4. pool SCM : * * * * *
-5. Definition
-   Pipeline script for SCM
-   Git
-   Repository URL: `https://github.com/purvalpatel/Sample_Nginx_Project_autodevops.git`
-   Select Credentaials
-   Select main
-   Script path
+1. **Login to Jenkins**  
+   Open your Jenkins dashboard.
+
+2. **Create a New Pipeline Job**  
+   - Click on **New Item**  
+   - Enter a job name  
+   - Select **Pipeline**  
+   - Click **OK**
+
+3. **Configure Build Settings**  
+   - Check **Discard old builds** (to save space and keep build history clean).
+
+4. **Set SCM Polling**  
+   - In **Build Triggers**, check **Poll SCM**  
+   - Enter the schedule:  
+     ```
+     * * * * *
+     ```
+     (This polls the repository every minute. Adjust if needed.)
+
+5. **Pipeline Definition**  
+   - Under **Pipeline**, set:
+     - **Definition**: *Pipeline script from SCM*  
+     - **SCM**: *Git*  
+     - **Repository URL**:  
+       ```
+       https://github.com/purvalpatel/Sample_Nginx_Project_autodevops.git
+       ```
+     - **Credentials**: Select the saved credentials (if required for private repos).  
+     - **Branch Specifier**: `main`  
+     - **Script Path**: Path to your `Jenkinsfile` (example: `Jenkinsfile` at repo root).
+
+6. **Save and Build**  
+   - Click **Save**  
+   - Trigger **Build Now** or wait for SCM polling to detect changes.
