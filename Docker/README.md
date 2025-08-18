@@ -31,7 +31,7 @@ Git + Jenkins + Docker + Ansible:
 4. Ansible playbook will be executed for deployment of this image on live server.
 5. Stop application on live server and deploy new one.
 
-#### Prerequisites:
+### Prerequisites:
 1. Create Git project with ( Application code, Dockerfile, Jenkinsfile, playbook )
     [Git project](https://github.com/purvalpatel/Sample_Nginx_Project_autodevops)
    
@@ -55,7 +55,7 @@ Git + Jenkins + Docker + Ansible:
 
 6. Verify the ansible inventory.
    
-#### Jenkins job Setup:
+### Jenkins job Setup:
 1. **Login to Jenkins**  
    Open your Jenkins dashboard.
 
