@@ -22,32 +22,46 @@ docker stop <id>        ## stop container.
 ```
 Git + Jenkins + Docker + Ansible:
 ---------------------------------
-##### Deploy one application 
+### Task : Deploy application on nginx webserver with docker.
 
-##### Prerequisites:
-1. Create Dockerhub account.
-2. Add Docker hub credentails to jenkins:
-    a. Manage jenkins -> Credentials -> Global -> Add credentials
-       Username with password
-       username : dockerhub-creds (purval1992)
-       username: DOCKERHUB_PASS
-   
-##### Deppendencies:
-1. Below packages need to install on jenkins server.
-```
-apt install docker.io
-```
+#### Devops plan:
+1. Merge code in Github.
+2. Jenkins take a pull from github.
+3. Creates docker image and push on docker hub.
+4. Ansible playbook will be executed for deployment of this image on live server.
+5. Stop application on live server and deploy new one.
 
-2. Create Git project with ( Application code, Dockerfile, Jenkinsfile, playbook )
+#### Prerequisites:
+1. Create Git project with ( Application code, Dockerfile, Jenkinsfile, playbook )
     (Git project)[https://github.com/purvalpatel/Sample_Nginx_Project_autodevops]
+   
+2. Jenkins account with all packages installed.
+   If no, install below dependencies:
+    ```bash
+    sudo pip3 install docker
+    apt install docker.io        ## on jenkins server
+    ```
+   
+4. Setup Dockerhub account.
+5. Store Dockerhub credentials into jenkins.
+    a. Manage jenkins -> Credentials -> Global -> Add credentials
+       > New Credentials -> Username with password
+       username : DOCKERHUB_PASS
+       password: xxxxx
+       ID : dockerhub-pass
 
-3. Create Jenkins job.
-   Create Item -> Select pipeline
+6. Verify the ansible inventory.
    
-   Select pooling
-   
-   For automatic build start we can achive this by two ways.
-    1. webhook         ( this requires live jenkins URL)
-    2. pooling
-  
-    So we are going with pooling.
+#### Jenkins job Setup:
+1. Login jenkins
+2. Create Job
+   New Item -> Pipeline
+3. check Discard old builds
+4. pool SCM : * * * * *
+5. Definition
+   Pipeline script for SCM
+   Git
+   Repository URL: `https://github.com/purvalpatel/Sample_Nginx_Project_autodevops.git`
+   Select Credentaials
+   Select main
+   Script path
