@@ -22,6 +22,23 @@ docker stop <id>        ## stop container.
 ```
 Git + Jenkins + Docker + Ansible:
 ---------------------------------
-1. Create Git project with ( Application code, Dockerfile, Jenkinsfile, playbook )
+
+##### Deppendencies:
+1. Below packages need to install on jenkins server.
+```
+apt install docker.io
+```
+
+2. Create Git project with ( Application code, Dockerfile, Jenkinsfile, playbook )
     (Git project)[https://github.com/purvalpatel/Sample_Nginx_Project_autodevops]
-2. 
+
+3. Create Jenkins job.
+   Create Item -> Select pipeline
+   
+   Select pooling
+   
+   For automatic build start we can achive this by two ways.
+    1. webhook         ( this requires live jenkins URL)
+    2. pooling
+  
+    So we are going with pooling.
