@@ -20,6 +20,7 @@ sudo docker run -p 80:80 -d nginx    ## Expose port
 
 docker stop <id>        ## stop container.
 ```
+
 Git + Jenkins + Docker + Ansible:
 ---------------------------------
 #### Task : Deploy application on nginx webserver with docker.
