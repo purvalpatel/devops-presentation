@@ -53,9 +53,10 @@ Verify inventory:
 ansible-inventory -i /etc/ansible/inventory/hosts --list
 ```
 
-Ping group in your inventory:
+Ping group in your inventory ( Ad-hoc command ):
 ```
 ansible web -m ping -i /etc/ansible/inventory/hosts
+ansible all -i inventory.ini -m copy -a "src=hello.txt dest=/tmp/hello.txt"
 ```
 
 Q: How to set public key authentication ?
