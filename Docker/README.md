@@ -32,6 +32,8 @@ docker run -v mysql_data:/var/lib/mysql -d nginx        ## mount volume
 docker stop <id>        ## stop container.
 dokcer start <id>        ## start container
 docker rm <id>            ## remove container
+
+docker network        ## docker network commands
 ```
 
 Git + Jenkins + Docker + Ansible:
