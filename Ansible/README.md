@@ -396,6 +396,7 @@ condition.yaml
 
 Exception handling:
 --------
+If due to one error whole playbook terminates, in this case exception handling will be helpful.
 
 #### Structure:
 ```yaml
