@@ -23,10 +23,15 @@ docker run nginx    ## Attached mode
 docker run -d nginx    ## run in detached mode
 
 docker ps             ## lits running containers
+docker ps -a            ## all containers
 
-sudo docker run -p 80:80 -d nginx    ## Expose port
+docker run -p 80:80 -d nginx    ## Expose port
+
+docker run -v mysql_data:/var/lib/mysql -d nginx        ## mount volume
 
 docker stop <id>        ## stop container.
+dokcer start <id>        ## start container
+docker rm <id>            ## remove container
 ```
 
 Git + Jenkins + Docker + Ansible:
