@@ -245,7 +245,7 @@ site.yaml
     ├── tasks/
     │   └── main.yml       ← list of tasks to do
     ├── files/             ← files to copy
-    ├── templates/         ← config templates
+    ├── templates/         ← config templates - nginx.conf.j2 file
     ├── vars/              ← default variables
     └── handlers/          ← restart service if needed
 ```
