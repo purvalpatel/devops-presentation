@@ -1,15 +1,23 @@
 Installation:
 -------------
 
-`apt-get install docker.io`
+```bash
+apt-get install docker.io
+
+docker --version
+docker info
+```
 
 Commands:
 ---------
 ```bash
+
+docker search ubuntu       ## get list of available images
 docker pull nginx    ## pull image from dockerhub
 
 docker images        ## list images
-
+    
+docker run hello-world    ## run first container
 docker run nginx    ## Attached mode
 
 docker run -d nginx    ## run in detached mode
