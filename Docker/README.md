@@ -56,6 +56,9 @@ CMD ["nginx", "-g", "daemon off;"]
 ##### Login docker hub
 `docker login -u purval1992`
 
+## run image:
+`docker run -d -p 80:80 purval1992/devops:0.1`
+
 Git + Jenkins + Docker + Ansible:
 ---------------------------------
 #### Task : Deploy application on nginx webserver with docker.
