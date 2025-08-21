@@ -53,6 +53,8 @@ CMD ["nginx", "-g", "daemon off;"]
 #### Tag image according to docker hub registry name:
 `docker tag  myapp:0.1 purval1992/devops:0.1`
 
+##### Login docker hub
+`docker login -u purval1992`
 
 Git + Jenkins + Docker + Ansible:
 ---------------------------------
