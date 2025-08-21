@@ -75,9 +75,12 @@ YAML - Human readable language mostly used for writing configuration files.
 
 #### Key-Value pairs:
 ```yaml
-vars:
-  username: dev_user
-  server: 127.0.0.1
+- name: ansible variables
+  hosts: webservers
+  vars:
+    username: dev_user
+    server: 127.0.0.1
+
 ```
 
 #### Lists:
