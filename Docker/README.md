@@ -39,6 +39,15 @@ docker rm <id>            ## remove container
 
 docker network        ## docker network commands
 ```
+Sample Dockerfile:
+------------------
+```
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
 
 Git + Jenkins + Docker + Ansible:
 ---------------------------------
