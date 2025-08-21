@@ -2,6 +2,18 @@ lets revise.
 
 Now deployment is pending.
 
+in 2015 when i was doing deployment manually.
+
+Why devops is in trend.
+	- devops have broad knowledge of developement process + operations , Networking, DNS management, SRE.
+	- Culture and colobaration
+	- Infrastructure as a code
+	- Monitoring and observability
+	- cloud and clusters
+	- Release Engineer	- CICD, Blue green deployment
+	- Security
+	- Automation everywhere.
+
 Ansible:
 
 1.What if you want to install one package or transfer one file on 100 servers.
@@ -104,6 +116,8 @@ Hardware, host os, hypervisors, (guest os, bin/lib, app)
 
 	Now we will combine together all this things.
 	Git + jenkins + Docker + Ansible
+
+	How it works? show basic flow.
 
 	Let's devide what we need to run this pipeline step by step.
 	a) Developers push code in github.
