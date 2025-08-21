@@ -2,6 +2,14 @@ Ansible Architecture:
 ---------------------
 ![image info](Ansible-architecture.png)
 
+Use cases:
+---------
+- Provisioning
+- configuration management
+- application deployment
+- continuous delivery
+- orchestration
+
 Ansible installation:
 ---------------------
 For ubuntu:
