@@ -1,55 +1,65 @@
 Ansible:
 
 1.What if you want to install one package or transfer one file on 100 servers.
-a)Do it manually by login each servers.
-b)Create loop and use ssh command to do this.
-c)Use ansible.
+	a)Do it manually by login each servers.
+	b)Create loop and use ssh command to do this.
+	c)Use ansible.
+
 2.How it works?
-a)Ansible server -> Ansible hosts.
-b)Use SSH and python only. ( how it will work )
+	a)Ansible server -> Ansible hosts.
+	b)Use SSH and python only. ( how it will work )
+
 3.What is inventory?
-a)It’s a list of items, for example name in phonebook.
+	a)It’s a list of items, for example name in phonebook.
+
 4.What is ad-hoc command.
-a)Single commands which we can run from command line.
-b)Like, there is command to copy, transfer file, install package.
+	a)Single commands which we can run from command line.
+	b)Like, there is command to copy, transfer file, install package.
+
 5.What is playbook.
-a)How YAML works.
-i.Key value pair
-ii.Lists
-iii.Dictionaries
-b)Sample playbook for ping all servers.
-i.Install packages on server.
-ii.Create directory.
-c)Managing Tasks using tags and variables:
-i.Tag
-1.If the playbook is too big, if wanted to run specific part.for example, i have one playbook which contains install and start service part. Now i wanted to start service only. 
-ii.Variables
-1.Static
-2.Dynamic  - As a devops i dont do this static thing.i want variable should pass externally by user.
-d)Ansible Roles:
-i.Who is devops ?  according to me devops is a person who automates tasks. As a devops i will create something which i can reuse. And in case of issues arises.
-ii.It’s full pack of instructions.
-iii.Writing messy playbook will create issue in troubleshooting. like, we can define each thing in proper location. E.g. Variables in seperate file, tasks in seperate file, templates are seperate, handlers are seperate.
-e)Control structures:
-i.Block
-1.Group multiple tasks together.
-ii.Loops
-1.Perform multiple tasks. I cant write the same part multiple times if wanted to do the same tasks.
-iii.Conditions.
-f)Exception handling:
-i.Handling errors.
+	a)How YAML works.
+		i.Key value pair
+		ii.Lists
+		iii.Dictionaries
+
+	b)Sample playbook for ping all servers.
+		i.Install packages on server.
+		ii.Create directory.
+	c)Managing Tasks using tags and variables:
+		i.Tag
+			1.If the playbook is too big, if wanted to run specific part.for example, i have one playbook which contains install and start service part. Now i wanted to start service only. 
+		ii.Variables
+			1.Static
+			2.Dynamic  - As a devops i dont do this static thing.i want variable should pass externally by user.
+	d)Ansible Roles:
+		i.Who is devops ?  according to me devops is a person who automates tasks. As a devops i will create something which i can reuse. And in case of issues arises.
+		ii.It’s full pack of instructions.
+		iii.Writing messy playbook will create issue in troubleshooting. like, we can define each thing in proper location. E.g. Variables in seperate file, tasks in seperate file, templates are seperate, handlers are seperate.
+	e)Control structures:
+		i.Block
+			1.Group multiple tasks together.
+		ii.Loops
+			1.Perform multiple tasks. I cant write the same part multiple times if wanted to do the same tasks.
+		iii.Conditions.
+	f)Exception handling:
+		i.Handling errors.
 
 
 
 Docker:
 1.“It is working on my machine” issue.
+
 2.Architecture of servers VM.
+
 3.Disavantage of VM:
-a)Slow because it loads whole kernel. Whole Os.
-b)Replication not possible. 
-c)Can not move easily.
-d)No light weight.
+	a)Slow because it loads whole kernel. Whole Os.
+	b)Replication not possible. 
+	c)Can not move easily.
+	d)No light weight.
+
 4.Architecture of docker. Infrastructure, host os, container engine, bin/lib, apps
+
 5.It is fast , portable, lightweight, scalable.
-a)Used by netflix, spotify, paypal.
+	a)Used by netflix, spotify, paypal.
+
 6.
