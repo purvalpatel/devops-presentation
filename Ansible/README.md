@@ -85,10 +85,12 @@ YAML - Human readable language mostly used for writing configuration files.
 
 #### Lists:
 ```yaml
-packages:
-  - nginx
-  - git
-  - curl
+  vars:
+    packages:
+      - nginx
+      - git
+      - curl
+
 ```
 #### Dictionaries (Nested Key-value):
 If same variables we wanted to use then use like this.
