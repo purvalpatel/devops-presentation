@@ -1,3 +1,7 @@
+lets revise.
+
+Now deployment is pending.
+
 Ansible:
 
 1.What if you want to install one package or transfer one file on 100 servers.
@@ -27,7 +31,9 @@ Ansible:
 		ii.Create directory.
 	c)Managing Tasks using tags and variables:
 		i.Tag
-			1.If the playbook is too big, if wanted to run specific part.for example, i have one playbook which contains install and start service part. Now i wanted to start service only. 
+			1.If the playbook is too big, if wanted to run specific part.for example, 
+			  i have one playbook which contains install and start service part. 
+			  Now i wanted to start service only. 
 		ii.Variables
 			1.Static
 			2.Dynamic  - As a devops i dont do this static thing.i want variable should pass externally by user.
@@ -50,6 +56,7 @@ Docker:
 1.“It is working on my machine” issue.
 
 2.Architecture of servers VM.
+Hardware, host os, hypervisors, (guest os, bin/lib, app)
 
 3.Disavantage of VM:
 	a)Slow because it loads whole kernel. Whole Os.
@@ -60,6 +67,52 @@ Docker:
 4.Architecture of docker. Infrastructure, host os, container engine, bin/lib, apps
 
 5.It is fast , portable, lightweight, scalable.
-	a)Used by netflix, spotify, paypal.
+	a) Used by netflix, spotify, paypal.
 
-6.
+6.How it works ?
+	Docker Image -> Docker container 
+
+	a) Now what is Docker Image.
+		To run any application on server what we required ?
+		- Minimal os binaries.
+		- service
+		- dependency packages.
+
+		from where we can get this?
+		docker is huge open source community repository. there is already so many
+		latest created images are there. which is available on dockerhub.
+
+		we just need to pull that image and start using it.
+
+	this we have discussed about pre-created images.
+
+
+	b) Now what, if we need to create our own image.
+		and run our own image.
+
+		Dockerfile:
+		Its kind of simple instructions.
+
+		Then we can push that image on dockerhub.
+
+
+	c) Now we will pull image from docker hub and run it.
+
+
+7. This is the manual process.
+	Now how do we convert it into pipeline?
+
+	Now we will combine together all this things.
+	Git + jenkins + Docker + Ansible
+
+	Let's devide what we need to run this pipeline step by step.
+	a) Developers push code in github.
+	   this github project should required,
+	   - Dockerfile,
+	   - Docker hub - username password
+	   - Ansible YAML ( deploy.yaml )	- pull from dockerhub and deploy on production server.
+	   - Jenkinsfile	( this file ise used to executing all this steps )	- Docker image create, push on docker hub
+
+	b) jenkins pipeline job
+		- git project URL
+		- configure username and password of github and dockerhub
