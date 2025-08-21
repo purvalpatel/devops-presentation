@@ -50,6 +50,9 @@ CMD ["nginx", "-g", "daemon off;"]
 #### Build image:
 ` docker build -t myapp:0.1 .`
 
+##### Tag image according to docker hub registry name:
+`docker tag  myapp:0.1 purval1992/devops:0.1`
+
 
 Git + Jenkins + Docker + Ansible:
 ---------------------------------
