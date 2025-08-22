@@ -13,7 +13,7 @@ Why devops is in trend.
 	- Security
 	- Automation everywhere.
 
-it's the one of the highest paying salary position in IT industry in top 10.
+it's the one of the highest paying Individual job in it industry.
 
 Lets see the live world examples,
 Jio hotstar cricket broadcasting.
@@ -22,9 +22,7 @@ Jio hotstar cricket broadcasting.
 
 Now deployment is pending.
 
-in 2015 when i was doing deployment manually.
-
-there is some terms,
+there is some terms: deployment, live server, prod server
 
 Ansible:
 
