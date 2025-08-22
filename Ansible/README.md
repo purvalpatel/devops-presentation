@@ -66,6 +66,7 @@ Ping group in your inventory ( Ad-hoc command ):
 ```
 ansible web -m ping -i /etc/ansible/inventory/hosts
 ansible all -i inventory.ini -m copy -a "src=hello.txt dest=/tmp/hello.txt"
+ansible webservers -m shell -a "uptime" -i /etc/ansible/inventory/hosts.ini
 ```
 
 Q: How to set public key authentication ?
