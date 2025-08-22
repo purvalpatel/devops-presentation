@@ -42,6 +42,7 @@ Create inventory file: `nano /etc/ansible/inventory/hosts`
 ```yaml
 [web]
 server1 ansible_host=192.168.0.13 ansible_user=root ansible_port=22
+#server1 ansible_host=10.10.20.104 ansible_user=root ansible_port=22 ansible_python_interpreter=/usr/bin/python3.10
 
 #[web_server]
 #server1 ansible_host=192.168.0.13 ansible_user=root ansible_port=22
