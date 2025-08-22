@@ -142,3 +142,18 @@ Hardware, host os, hypervisors, (guest os, bin/lib, app)
 	b) jenkins pipeline job
 		- git project URL
 		- configure username and password of github and dockerhub
+
+
+
+
+tips that will helps in It industry:
+-----
+You don't need to know everything.
+	clear your basics
+learn how to learn
+	- start coding instead of learning. for eg. 1 hour in learning, 4 hours in building
+You will never fill ready,start anyway
+	- who le me touch production.
+The real skill is problem solving.
+Nobody cares about your code.
+Start learning by yourself no one is going to spoon feeding.
