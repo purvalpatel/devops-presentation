@@ -48,3 +48,11 @@ Run the containers:
 ```
 docker-compose up -d
 ```
+
+Start/Stop containers:
+```
+docker-compose stop
+docker-compose start
+docker-compose restart
+docker-compose down
+```
