@@ -24,6 +24,8 @@ Now deployment is pending.
 
 in 2015 when i was doing deployment manually.
 
+there is some terms,
+
 Ansible:
 
 1.What if you want to install one package or transfer one file on 100 servers.
