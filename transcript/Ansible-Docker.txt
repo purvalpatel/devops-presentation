@@ -1,8 +1,7 @@
 lets revise.
 
-Now deployment is pending.
-
-in 2015 when i was doing deployment manually.
+You know why we are discussing on devops.
+only for build and deploy. why this much hype ?
 
 Why devops is in trend.
 	- devops have broad knowledge of developement process + operations , Networking, DNS management, SRE.
@@ -13,6 +12,17 @@ Why devops is in trend.
 	- Release Engineer	- CICD, Blue green deployment
 	- Security
 	- Automation everywhere.
+
+it's the one of the highest paying salary position in IT industry in top 10.
+
+Lets see the live world examples,
+Jio hotstar cricket broadcasting.
+	- how proper the architecture.
+	- see this is the reason we are saying why devops is needed.
+
+Now deployment is pending.
+
+in 2015 when i was doing deployment manually.
 
 Ansible:
 
