@@ -1,6 +1,6 @@
 Why kubernetes?
 ---------------
-1. The Problem Before Kubernetes
+The Problem Before Kubernetes
   - Apps used to run on bare metal servers → hard to scale, costly.
   - Then came virtual machines → better, but heavy.
   - Then came containers (Docker) → lightweight, portable, fast.
